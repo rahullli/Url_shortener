@@ -1,6 +1,6 @@
 package com.url.url_shortner.security;
 
-import com.url.url_shortner.service.UserDetailImpl;
+import com.url.url_shortner.service.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -33,7 +33,7 @@ public class jwtUtils {
         return null;
     }
 
-    public String generateToken(UserDetailImpl userDetail){
+    public String generateToken(UserDetailsImpl userDetail){
         String userName = userDetail.getUsername();
         String roles = userDetail.getAuthorities().stream()
                 .map(authority -> authority.getAuthority())
